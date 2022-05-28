@@ -1,20 +1,15 @@
 <?php
-/* --- $_GET & $_POST Superglobals -- */
-
-/*
-  We can pass data through urls and forms using the $_GET and $_POST superglobals.
-*/
-
-
-
 if(isset($_POST['submit'])){
-  echo $_POST['name'];
+ $username = filter_input(INPUT_POST, 'username',
+ FILTER_SANITIZE_SPECIAL_CHARS);
+ $password = $_POST['password'];
 
-  echo $_POST['age'];
+ if($username == 'john' && $password == 'password'){
+   $_SESSION['username'] = $username;
+ }
 }
 
 ?>
-<!-- <a href="<?php echo $_SERVER['PHP_SELF']; ?>?name=jshn& age=30">CLICK</a> -->
 
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
 <div>
