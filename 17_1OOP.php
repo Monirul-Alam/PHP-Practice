@@ -38,7 +38,7 @@ function get_name() {
 
 $user1 = new User('brad','modiodgmailc.com', 'fddf');
 $user2 = new User('bdfd','fggfdgmailc.com', 'fssddf');
-// echo $user2-> name;
+//  echo $user2-> name;
 
  
 
